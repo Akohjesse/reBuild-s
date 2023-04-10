@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app">
+        <div class="container">
+           <div class="grid_wrap">
+             <div class="grid_wrap_container">
+                  <div class="vid_cont">
+                    <video playsInline loop muted autoplay src="https://www.apple.com/105/media/us/apple-tv-4k/2022/90c4e81a-c161-4f7f-9ea3-137ffd1054f5/anim/tv-plus/medium_2x.mp4"></video>
+                  </div>
+                  <div class="vid_cont">
+                   <video playsInline loop muted autoplay src="https://www.apple.com/105/media/us/airpods-pro/2022/d2deeb8e-83eb-48ea-9721-f567cf0fffa8/anim/spatial-audio/large.mp4"></video>
+                  </div>
+                  <div class="vid_cont">
+                    <video playsInline loop muted autoplay src="https://www.apple.com/105/media/us/apple-tv-4k/2022/90c4e81a-c161-4f7f-9ea3-137ffd1054f5/anim/dolby/medium_2x.mp4"></video>
+                  </div>
+                  <div class="vid_cont">
+                    <video playsInline loop muted autoplay src="https://www.apple.com/105/media/us/apple-tv-4k/2022/90c4e81a-c161-4f7f-9ea3-137ffd1054f5/anim/fitness/medium_2x.mp4"></video>
+                   
+                  </div>
+                  <div class="vid_cont">
+                    <video playsInline loop muted autoplay src="https://www.apple.com/105/media/us/iphone-14/2023/97f8aced-10f6-4f98-a722-2c87ef5b9ee6/anim/action-mode/large_2x.mp4"></video>
+                  </div>
+                  <div class="vid_cont">
+                    <video playsInline loop muted autoplay src="https://www.apple.com/105/media/us/ipad-pro/2022/08087f4b-7539-4b1e-ae8a-adc18f4242ae/anim/hover/medium_2x.mp4"></video>
+                  </div>
+                  <div class="vid_cont">
+
+                    <video playsInline loop muted autoplay src="https://www.apple.com/105/media/us/apple-watch-ultra/2022/4d9e62e1-fe94-4bb9-abbe-0b8c9626a304/anim/hero/large.mp4"></video>
+                  </div>
+                  <div class="vid_cont">
+                    <video playsInline loop muted autoplay src="https://www.apple.com/105/media/us/iphone-14-pro/2023/b094f6e4-dcdb-494f-bd72-45d659126dcd/anim/action-mode/large_2x.mp4"></video>
+                   
+                  </div>
+             </div>
+           </div>
+        </div>
+    </div>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"
+    integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js" integrity="sha512-AMl4wfwAmDM1lsQvVBBRHYENn1FR8cfOTpt8QVbb/P55mYOdahHD4LmHM1W55pNe3j/3od8ELzPf/8eNkkjISQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="module" src="/main.js"></script>
+    <script>
+    gsap.registerPlugin(ScrollTrigger);
+    let tl = gsap.timeline({
+      scrollTrigger:{
+           trigger:".container",
+           start: "top top",
+           scrub:1,
+           end:"bottom bottom",
+
+  
+      }
+    })
+
+    const videos = gsap.utils.toArray('.vid_cont video');
+    gsap.set(videos, {
+      scale:1.5
+    })
+    tl.to('.grid_wrap_container', {
+      scale: 3,
+      rotateZ: '270deg',
+      duration:0.5,
+      ease:"easeInOut"
+    }).to(
+        videos,
+        {
+          scale: 2.5,
+      rotateZ: '-270deg',
+      ease:"easeInOut",
+      duration:0.5,
+        },0
+
+    )
+    </script>
+  </body>
+</html>

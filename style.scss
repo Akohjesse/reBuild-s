@@ -1,0 +1,80 @@
+:where(*, *::before, *::after) {
+    border-width: 0;
+    border-style: solid;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    height: 650vh;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    .grid_wrap{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        display: -webkit-box; 
+       -webkit-box-align: center;
+       -webkit-box-pack: center; 
+    inset: 0px;
+        overflow: hidden;
+        &_container{
+            display: grid;
+            grid-gap: .6rem;
+            grid-template-columns: repeat(9, 5vh);
+            grid-template-rows: repeat(10, 5vh);
+            transform-origin: 50% 45%;
+            grid-template-areas:
+        ". a a a a . . . ."
+        ". a a a a b b . ."
+        ". a a a a b b . ."
+        "c c c d d d e e ."
+        "c c c d d d e e ."
+        "c c c d d d f f f"
+        ". g g h h h f f f"
+        ". g g h h h f f f"
+        ". . . h h h . . ."
+        ". . . h h h . . .";
+            .vid_cont{
+                border-radius: .7rem;
+                overflow: hidden;
+                border: 1px solid black;
+                video{
+                  width: 100%;
+                    display: block;
+                    overflow-clip-margin: content-box;
+                    
+    overflow: clip;
+    height: 100%;
+    object-fit: cover;
+                }
+                &:nth-child(1){
+                     grid-area: a;
+                }
+                &:nth-child(2){
+                  grid-area: b;
+                }
+                &:nth-child(3){
+    grid-area: c;
+                }
+                &:nth-child(4){
+  grid-area: d;
+                }
+                &:nth-child(5){
+  grid-area: e;
+                }
+                &:nth-child(6){
+  grid-area: f;
+                }
+                &:nth-child(7){
+  grid-area: g;
+                }
+                &:nth-child(8){
+  grid-area: h;
+                }
+            }
+        }
+    }
+}
