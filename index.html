@@ -51,6 +51,18 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js" integrity="sha512-AMl4wfwAmDM1lsQvVBBRHYENn1FR8cfOTpt8QVbb/P55mYOdahHD4LmHM1W55pNe3j/3od8ELzPf/8eNkkjISQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="module" src="/main.js"></script>
     <script>
+//             const wrap = document.querySelector(".container");
+// window.addEventListener("scroll", () => {
+//     const html = document.documentElement;
+//     const scrollTop = html.scrollTop - wrap.offsetTop;
+//     const maxScrollTop = wrap.scrollHeight - window.innerHeight;
+//     const scrollFraction = scrollTop / maxScrollTop;
+//   const scrollP = Math.round(scrollFraction );
+
+//   const rotation = scrollP* 270;
+//   document.querySelector(".grid_wrap_container").style.transform = `rotate(${rotation}deg)`;
+//   console.log(rotation)
+// });
     gsap.registerPlugin(ScrollTrigger);
     let tl = gsap.timeline({
       scrollTrigger:{
